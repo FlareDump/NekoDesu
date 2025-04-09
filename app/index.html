@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NekoDesu</title>
+    <link rel="icon" href="/assets/icons/NekoDesu.png" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Yatra+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cce20cf791.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: "Yatra One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .icon-color {
+        color: black;
+        transition: color 0.2s ease;
+      }
+
+      .icon-color2 {
+        color: #ff6224;
+        transition: color 0.2s ease;
+      }
+
+      .icon-color:hover {
+        color: #fff;
+      }
+      /* Hide scrollbar but keep scrolling functionality */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body class="hide-scrollbar bg-white">
+    <header class="bg-primary fixed z-50 w-full">
+      <nav class="flex flex-wrap items-center justify-between px-4 py-2">
+        <div class="flex items-center gap-x-4">
+          <img
+            src="../assets/icons/NekoDesu.png"
+            alt="NekoDesu Logo"
+            class="h-15 w-15"
+          />
+          <h1 class="text-2xl font-bold">NekoDesu</h1>
+        </div>
+        <!--Nav Bar Contents for large screens-->
+        <div class="hidden md:flex lg:flex">
+          <ul class="flex items-center gap-10 text-lg font-medium">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li class="bg-secondary rounded-2xl px-4 py-1">
+              <a href="#">Contacts</a>
+            </li>
+          </ul>
+        </div>
+        <!--Hamborgir icon for mobile view-->
+        <button class="md:hidden lg:hidden" onclick="toggleDropdown()">
+          <i class="icon-color fa-solid fa-bars fa-2xl"></i>
+        </button>
+        <div
+          id="dropdown-menu"
+          class="bg-primary border-secondary absolute right-1 mt-20 hidden w-1/2 rounded border shadow-lg"
+        >
+          <a
+            href="#"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
+            >Menu</a
+          >
+          <a
+            href="#"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
+            >Contacts</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!--Hero Section-->
+    <section class="relative flex h-screen items-center overflow-hidden px-4">
+      <!--Hero Section BG Image-->
+      <div
+        class="bg-opacity-25 absolute inset-0 z-[-1] flex h-full w-full items-center justify-center bg-black"
+      >
+        <!--For Large Screen-->
+        <img
+          class="absolute inset-0 hidden h-full w-full object-cover opacity-25 lg:block"
+          src="/assets/images/lindsay-moe-UP5jWpuIvZI-unsplash.jpg"
+          alt="Rameeennnn"
+        />
+        <!--For Small Screen-->
+        <img
+          class="absolute inset-0 block h-full w-full object-cover opacity-25 lg:hidden"
+          src="/assets/images/lindsay-moe-UP5jWpuIvZI-unsplash.jpg"
+          alt="Rameeennnn"
+        />
+      </div>
+
+      <div
+        class="items-center text-center text-white lg:mr-[35%] lg:px-20 lg:text-start"
+      >
+        <h2 class="text-5xl font-bold md:text-6xl lg:text-7xl">
+          Welcome to NekoDesu – Where Tradition Meets Flavor.
+        </h2>
+        <p class="mt-5 text-xl md:text-2xl lg:text-2xl">
+          Step into a world of authentic Japanese cuisine, crafted with care and
+          served with a smile.
+        </p>
+        <div class="mt-10">
+          <button
+            onclick=""
+            class="font-primary text-secondary button hover:bg-secondary rounded-lg border-2 px-3 pb-2 text-xl font-medium transition-all duration-300 ease-out hover:text-white"
+          >
+            Menu <span class="text-3xl">&#11022;</span>
+          </button>
+        </div>
+      </div>
+
+      <!--Add bouncing ball with arrow here-->
+      <div
+        class="icon-color2 border-secondary absolute bottom-5 left-1/2 h-10 w-10 -translate-x-1/2 transform animate-bounce rounded-full border text-center text-4xl"
+      >
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </section>
+
+    <!--Foods Section-->
+    <section class="mx-4 mt-8">
+      <h2 class="text-4xl font-bold">Best Sellers</h2>
+      <!-- Best Sellers Section -->
+      <div class="hide-scrollbar flex gap-4 overflow-x-auto py-4">
+        <!--Card 1-->
+
+        <div
+          popover
+          id="ramen_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Ramen
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">2 cups chicken or vegetable broth</li>
+              <li class="list-disc">
+                1 pack instant ramen noodles (discard the seasoning or use half)
+              </li>
+              <li class="list-disc">1 clove garlic, minced (optional)</li>
+              <li class="list-disc">1 tsp soy sauce</li>
+              <li class="list-disc">1 tsp sesame oil (optional)</li>
+              <li class="list-disc">1 soft-boiled or fried egg</li>
+              <li class="list-disc">Sliced green onions</li>
+              <li class="list-disc">
+                Optional toppings: mushrooms, spinach, corn, or cooked meat
+              </li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Instructions:
+            </h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Simmer broth with garlic and soy sauce.
+              </li>
+              <li class="list-decimal">
+                Add noodles and cook for 2-3 minutes.
+              </li>
+              <li class="list-decimal">
+                Stir in sesame oil, then pour into a bowl.
+              </li>
+              <li class="list-decimal">
+                Top with egg, green onions, and extras.
+              </li>
+              <li class="list-decimal">Slurp and enjoy!</li>
+            </ol>
+          </div>
+
+          <div class="bg-primary sticky bottom-0 flex justify-center py-2">
+            <button
+              popovertarget="ramen_recipe"
+              popovertargetaction="hide"
+              class="bg-secondary rounded-lg px-4 py-1 text-lg font-medium text-white"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Ramen.jpg"
+              alt="Ramen"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Ramen
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+              ></div>
+              <h
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Ramen
+              </h>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                A comforting Japanese noodle soup with springy noodles in rich
+                broth.
+              </p>
+              <button
+                popovertarget="ramen_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--End of Card 1-->
+
+        <!--Card 2-->
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Ramen.jpg"
+              alt="Ramen"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Ramen
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Ramen
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <button
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--Card 3-->
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Ramen.jpg"
+              alt="Ramen"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Ramen
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Ramen
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <button
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-4xl font-bold">Main Dishes</h2>
+      <div></div>
+      <h2 class="text-4xl font-bold">Side Dishes</h2>
+      <div></div>
+      <h2 class="text-4xl font-bold">Drinks</h2>
+      <div></div>
+    </section>
+
+    <script src="/app/index.js"></script>
+  </body>
+</html>
