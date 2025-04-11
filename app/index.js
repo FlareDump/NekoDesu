@@ -10,3 +10,15 @@ document.addEventListener("click", function (event) {
     dropdown.classList.add("hidden");
   }
 });
+
+function toggleHeart(icon) {
+  if (icon.classList.contains("fa-regular")) {
+    icon.classList.remove("fa-regular", "fa-heart");
+    icon.classList.add("fa-solid", "fa-heart");
+    icon.style.color = "#ff0000";
+  } else {
+    icon.classList.remove("fa-solid", "fa-heart");
+    icon.classList.add("fa-regular", "fa-heart");
+    icon.style.color = "";
+  }
+}

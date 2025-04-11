@@ -24,7 +24,7 @@
       }
 
       .icon-color {
-        color: black;
+        color: white;
         transition: color 0.2s ease;
       }
 
@@ -32,9 +32,12 @@
         color: #ff6224;
         transition: color 0.2s ease;
       }
+      .icon-color-yellow {
+        color: #ffb703;
+      }
 
       .icon-color:hover {
-        color: #fff;
+        color: #ff6224;
       }
       /* Hide scrollbar but keep scrolling functionality */
       .hide-scrollbar::-webkit-scrollbar {
@@ -42,31 +45,37 @@
       }
       .hide-scrollbar {
         -ms-overflow-style: none;
-        /* IE and Edge */
         scrollbar-width: none;
-        /* Firefox */
       }
     </style>
   </head>
 
   <body class="hide-scrollbar bg-white">
     <header class="bg-primary fixed z-50 w-full">
-      <nav class="flex flex-wrap items-center justify-between px-4 py-2">
+      <nav
+        class="flex flex-wrap items-center justify-between px-4 py-2 lg:px-20"
+      >
         <div class="flex items-center gap-x-4">
-          <img
-            src="../assets/icons/NekoDesu.png"
-            alt="NekoDesu Logo"
-            class="h-15 w-15"
-          />
-          <h1 class="text-2xl font-bold">NekoDesu</h1>
+          <a href="#hero-section">
+            <img
+              src="../assets/icons/NekoDesu.png"
+              alt="NekoDesu Logo"
+              class="h-15 w-15"
+            />
+          </a>
+          <h1 class="text-2xl font-bold text-white">NekoDesu</h1>
         </div>
         <!--Nav Bar Contents for large screens-->
         <div class="hidden md:flex lg:flex">
-          <ul class="flex items-center gap-10 text-lg font-medium">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li class="bg-secondary rounded-2xl px-4 py-1">
-              <a href="#">Contacts</a>
+          <ul class="flex items-center gap-10 text-lg font-medium text-white">
+            <li><a href="#hero-section">Home</a></li>
+            <li><a href="#foods-section">Recipes</a></li>
+            <li>
+              <a
+                class="bg-secondary hover:text-secondary border-secondary rounded-lg border-2 px-4 py-1 transition duration-300 ease-out hover:bg-white"
+                href="#footer-section"
+                >Contacts</a
+              >
             </li>
           </ul>
         </div>
@@ -79,18 +88,18 @@
           class="bg-primary border-secondary absolute right-1 mt-20 hidden w-1/2 rounded border shadow-lg"
         >
           <a
-            href="#"
-            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
+            href="#hero-section"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-white"
             >Home</a
           >
           <a
-            href="#"
-            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
-            >Menu</a
+            href="#foods-section"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-white"
+            >Recipes</a
           >
           <a
-            href="#"
-            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-gray-800"
+            href="#footer-section"
+            class="font-dmsans hover:bg-secondary flex justify-center px-4 py-2 text-lg font-medium text-white"
             >Contacts</a
           >
         </div>
@@ -98,7 +107,10 @@
     </header>
 
     <!--Hero Section-->
-    <section class="relative flex h-screen items-center overflow-hidden px-4">
+    <section
+      id="hero-section"
+      class="relative flex h-screen items-center overflow-hidden px-4"
+    >
       <!--Hero Section BG Image-->
       <div
         class="bg-opacity-25 absolute inset-0 z-[-1] flex h-full w-full items-center justify-center bg-black"
@@ -121,41 +133,43 @@
         class="items-center text-center text-white lg:mr-[35%] lg:px-20 lg:text-start"
       >
         <h2 class="text-5xl font-bold md:text-6xl lg:text-7xl">
-          Welcome to NekoDesu – Where Tradition Meets Flavor.
+          Welcome to <span class="text-secondary">NekoDesu</span> – Where
+          Tradition Meets Flavor.
         </h2>
-        <p class="mt-5 text-xl md:text-2xl lg:text-2xl">
-          Step into a world of authentic Japanese cuisine, crafted with care and
-          served with a smile.
+        <p class="mt-5 text-xl md:text-2xl lg:mr-[38%] lg:text-2xl">
+          Discover the art of authentic Japanese cooking with easy-to-follow
+          recipes, crafted with care and tradition.
         </p>
         <div class="mt-10">
-          <button
-            onclick=""
-            class="font-primary text-secondary button hover:bg-secondary rounded-lg border-2 px-3 pb-2 text-xl font-medium transition-all duration-300 ease-out hover:text-white"
+          <a
+            href="#foods-section"
+            class="text-secondary button hover:bg-secondary rounded-lg border-2 px-3 py-2 pb-2 text-xl font-medium transition-all duration-300 ease-out hover:text-white"
           >
-            Menu <span class="text-3xl">&#11022;</span>
-          </button>
+            See Recipes <span class="text-3xl">&#11022;</span>
+          </a>
         </div>
       </div>
 
       <!--Add bouncing ball with arrow here-->
       <div
-        class="icon-color2 border-secondary absolute bottom-5 left-1/2 h-10 w-10 -translate-x-1/2 transform animate-bounce rounded-full border text-center text-4xl"
+        class="icon-color-yellow border-accent absolute bottom-5 left-1/2 h-10 w-10 -translate-x-1/2 transform animate-bounce rounded-full border text-center text-4xl"
       >
         <i class="fa-solid fa-arrow-down"></i>
       </div>
     </section>
+    <!--End of Hero Section-->
 
     <!--Foods Section-->
-    <section class="mx-4 mt-8">
-      <h2 class="text-4xl font-bold">Best Sellers</h2>
-      <!-- Best Sellers Section -->
+    <section id="foods-section" class="mx-4 mt-8">
+      <h2 class="text-center text-4xl font-bold">Main Dishes</h2>
+      <!-- Main Dishes Section -->
       <div class="hide-scrollbar flex gap-4 overflow-x-auto py-4">
         <!--Card 1-->
 
         <div
           popover
           id="ramen_recipe"
-          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
         >
           <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
             <h2 class="text-secondary flex justify-center text-4xl font-bold">
@@ -201,16 +215,6 @@
               <li class="list-decimal">Slurp and enjoy!</li>
             </ol>
           </div>
-
-          <div class="bg-primary sticky bottom-0 flex justify-center py-2">
-            <button
-              popovertarget="ramen_recipe"
-              popovertargetaction="hide"
-              class="bg-secondary rounded-lg px-4 py-1 text-lg font-medium text-white"
-            >
-              Close
-            </button>
-          </div>
         </div>
 
         <div
@@ -232,7 +236,7 @@
               class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
             >
               <div
-                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
               ></div>
               <h
                 class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
@@ -240,7 +244,7 @@
                 Ramen
               </h>
               <p
-                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+                class="z-10 mt-2 translate-y-5 transform px-5 text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
               >
                 A comforting Japanese noodle soup with springy noodles in rich
                 broth.
@@ -257,38 +261,91 @@
         <!--End of Card 1-->
 
         <!--Card 2-->
+
+        <div
+          popover
+          id="sushi_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Sushi
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">
+                1 cup sushi rice (cooked & seasoned with vinegar, sugar, salt)
+              </li>
+              <li class="list-disc">1 sheet <em>nori</em> (seaweed)</li>
+              <li class="list-disc">1/4 cucumber, julienned</li>
+              <li class="list-disc">1/2 avocado, sliced</li>
+              <li class="list-disc">
+                50g fresh tuna or salmon (or crab sticks)
+              </li>
+              <li class="list-disc">Soy sauce and wasabi (to serve)</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Spread rice evenly on <em>nori</em>, leaving a 1-inch border at
+                the top.
+              </li>
+              <li class="list-decimal">
+                Arrange fish, avocado, and cucumber in a line near the bottom.
+              </li>
+              <li class="list-decimal">
+                Roll tightly using a bamboo mat, wetting the <em>nori</em> edge
+                to seal.
+              </li>
+              <li class="list-decimal">
+                Slice into 6-8 pieces with a wet knife.
+              </li>
+              <li class="list-decimal">Serve with soy sauce and wasabi!</li>
+            </ol>
+          </div>
+        </div>
+
         <div
           class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
         >
           <div class="relative h-full w-full">
             <img
-              src="/assets/images/Ramen.jpg"
-              alt="Ramen"
+              src="/assets/images/Sushi.png"
+              alt="Sushi"
               class="h-full w-full rounded-sm object-cover"
             />
             <!-- Always visible h3 -->
             <h3
               class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
             >
-              Ramen
+              Sushi
             </h3>
             <div
               class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
             >
               <div
-                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
               ></div>
               <h3
                 class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
               >
-                Ramen
+                Sushi
               </h3>
               <p
-                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+                class="z-10 mt-2 translate-y-5 transform px-5 text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                A Japanese dish featuring vinegared rice combined with fresh
+                fish, vegetables, or other ingredients, often wrapped in seaweed
+                (nori).
               </p>
               <button
+                popovertarget="sushi_recipe"
                 class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
               >
                 Show Recipe
@@ -296,55 +353,1218 @@
             </div>
           </div>
         </div>
+        <!--End of Card 2-->
+
         <!--Card 3-->
+        <div
+          popover
+          id="tempura_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Tempura
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">1 cup ice-cold water</li>
+              <li class="list-disc">1 large egg</li>
+              <li class="list-disc">1 cup all-purpose flour</li>
+              <li class="list-disc">1 tbsp cornstarch</li>
+              <li class="list-disc">
+                Assorted vegetables (sweet potato, zucchini, eggplant)
+              </li>
+              <li class="list-disc">Shrimp or other seafood (optional)</li>
+              <li class="list-disc">Vegetable oil for frying</li>
+              <li class="list-disc">
+                Tentsuyu dipping sauce (or tempura sauce)
+              </li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Whisk egg and ice water in a bowl. Sift in flour and cornstarch,
+                mix lightly (leave lumps).
+              </li>
+              <li class="list-decimal">Heat oil to 340-350°F (170-180°C).</li>
+              <li class="list-decimal">
+                Dip vegetables/seafood in batter, fry until golden (2-3
+                minutes).
+              </li>
+              <li class="list-decimal">
+                Drain on a wire rack or paper towels.
+              </li>
+              <li class="list-decimal">
+                Serve immediately with dipping sauce!
+              </li>
+            </ol>
+          </div>
+        </div>
+
         <div
           class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
         >
           <div class="relative h-full w-full">
             <img
-              src="/assets/images/Ramen.jpg"
-              alt="Ramen"
+              src="/assets/images/Tempura.jpg"
+              alt="Tempura"
               class="h-full w-full rounded-sm object-cover"
             />
             <!-- Always visible h3 -->
             <h3
               class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
             >
-              Ramen
+              Tempura
             </h3>
             <div
               class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
             >
               <div
-                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-40"
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
               ></div>
               <h3
                 class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
               >
-                Ramen
+                Tempura
               </h3>
               <p
-                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+                class="z-10 mt-2 translate-y-5 transform px-5 text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                A Japanese dish of deep-fried seafood and vegetables in a light,
+                crispy batter, served with a savory dipping sauce.
               </p>
               <button
+                popovertarget="tempura_recipe"
                 class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
               >
                 Show Recipe
               </button>
             </div>
+          </div>
+        </div>
+        <!--End of Card 3-->
+
+        <!--Card 4-->
+        <div
+          popover
+          id="tonkatsu_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Tonkatsu
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">2 pork loin chops (1-inch thick)</li>
+              <li class="list-disc">Salt and pepper</li>
+              <li class="list-disc">1/2 cup all-purpose flour</li>
+              <li class="list-disc">1 large egg, beaten</li>
+              <li class="list-disc">1 cup panko breadcrumbs</li>
+              <li class="list-disc">Vegetable oil for frying</li>
+              <li class="list-disc">
+                Tonkatsu sauce (or Worcestershire sauce)
+              </li>
+              <li class="list-disc">Shredded cabbage (for serving)</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Season pork with salt and pepper. Dredge in flour, dip in egg,
+                then coat with panko.
+              </li>
+              <li class="list-decimal">
+                Heat oil to 340°F (170°C). Fry pork for 5-6 minutes until golden
+                brown.
+              </li>
+              <li class="list-decimal">
+                Drain on a wire rack and rest for 3 minutes.
+              </li>
+              <li class="list-decimal">
+                Slice into strips and serve with cabbage and tonkatsu sauce.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Tonkatsu.jpg"
+              alt="Tonkatsu"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Tonkatsu
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Tonkatsu
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform px-5 text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                A Japanese crispy breaded pork cutlet, deep-fried to golden
+                perfection and served with tangy tonkatsu sauce.
+              </p>
+              <button
+                popovertarget="tonkatsu_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--End of Card 4-->
+
+        <!--Card 5-->
+        <div
+          popover
+          id="yakitori_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Yakitori
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">1 lb chicken thighs (boneless, skin-on)</li>
+              <li class="list-disc">3-4 green onions (negi)</li>
+              <li class="list-disc">Bamboo skewers (soaked in water)</li>
+              <li class="list-disc">2 tbsp soy sauce</li>
+              <li class="list-disc">2 tbsp mirin</li>
+              <li class="list-disc">1 tbsp sake</li>
+              <li class="list-disc">1 tbsp sugar</li>
+              <li class="list-disc">Salt (for shio-yakitori option)</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Cut chicken into 1-inch cubes and green onions into 1-inch
+                pieces.
+              </li>
+              <li class="list-decimal">
+                Skewer chicken alternately with green onions (3-4 pieces per
+                skewer).
+              </li>
+              <li class="list-decimal">
+                For tare sauce: Simmer soy sauce, mirin, sake and sugar until
+                slightly thickened.
+              </li>
+              <li class="list-decimal">
+                Grill skewers over medium-high heat, turning frequently. Brush
+                with tare sauce in last 2 minutes.
+              </li>
+              <li class="list-decimal">
+                Serve immediately (optionally with shichimi togarashi).
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Yakitori.webp"
+              alt="Yakitori"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Yakitori
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Yakitori
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Japanese grilled chicken skewers, typically seasoned with either
+                savory tare sauce or salt, featuring juicy thigh meat and crisp
+                green onions.
+              </p>
+              <button
+                popovertarget="yakitori_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--End of Card 5-->
+
+        <!--Card 6-->
+        <div
+          popover
+          id="donburi_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Donburi
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients (Gyudon Style):
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">
+                1/2 lb thinly sliced beef (ribeye or chuck)
+              </li>
+              <li class="list-disc">1 onion, thinly sliced</li>
+              <li class="list-disc">2 cups cooked Japanese short-grain rice</li>
+              <li class="list-disc">1/2 cup dashi stock</li>
+              <li class="list-disc">3 tbsp soy sauce</li>
+              <li class="list-disc">2 tbsp mirin</li>
+              <li class="list-disc">1 tbsp sugar</li>
+              <li class="list-disc">1 tsp grated ginger</li>
+              <li class="list-disc">
+                Pickled red ginger (beni shoga) for garnish
+              </li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                In a pan, combine dashi, soy sauce, mirin and sugar. Bring to
+                simmer.
+              </li>
+              <li class="list-decimal">
+                Add onions and cook for 3 minutes until translucent.
+              </li>
+              <li class="list-decimal">
+                Add beef slices and cook for 2-3 minutes until just cooked
+                through.
+              </li>
+              <li class="list-decimal">
+                Spoon beef and sauce over bowls of hot rice.
+              </li>
+              <li class="list-decimal">
+                Top with grated ginger and beni shoga. Optional egg yolk in
+                center.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Donburi.jpg"
+              alt="Donburi"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <!-- Always visible h3 -->
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Donburi
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Donburi
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Japanese rice bowl dish featuring simmered meat (typically beef
+                or chicken) and vegetables served over steamed rice, often
+                topped with egg.
+              </p>
+              <button
+                popovertarget="donburi_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--End of Card 6-->
+      </div>
+
+      <br />
+
+      <h2 class="text-center text-4xl font-bold">Side Dishes</h2>
+      <!-- Side Dishes Section -->
+      <div class="hide-scrollbar flex gap-4 overflow-x-auto py-4">
+        <!-- Card 1: Miso Soup -->
+        <div
+          popover
+          id="miso_soup_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Miso Soup
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">4 cups dashi stock</li>
+              <li class="list-disc">3-4 tbsp miso paste (white or red)</li>
+              <li class="list-disc">1/2 block silken tofu, cubed</li>
+              <li class="list-disc">1/4 cup wakame seaweed (rehydrated)</li>
+              <li class="list-disc">2 green onions, thinly sliced</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Heat dashi stock until just simmering (not boiling).
+              </li>
+              <li class="list-decimal">
+                Dissolve miso paste in a ladle with some hot broth, then return
+                to pot.
+              </li>
+              <li class="list-decimal">
+                Add tofu and wakame, simmer for 2 minutes.
+              </li>
+              <li class="list-decimal">
+                Garnish with green onions and serve immediately.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Miso_Soup.jpg"
+              alt="Miso Soup"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Miso Soup
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Miso Soup
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Traditional Japanese soup made with dashi stock and fermented
+                miso paste, containing tofu and seaweed.
+              </p>
+              <button
+                popovertarget="miso_soup_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 1 -->
+
+        <!-- Card 2: Sunomono -->
+        <div
+          popover
+          id="sunomono_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Sunomono
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">1 English cucumber, thinly sliced</li>
+              <li class="list-disc">1 tsp salt</li>
+              <li class="list-disc">2 tbsp rice vinegar</li>
+              <li class="list-disc">1 tbsp sugar</li>
+              <li class="list-disc">1/2 tsp soy sauce</li>
+              <li class="list-disc">1 tsp toasted sesame seeds</li>
+              <li class="list-disc">Optional: wakame seaweed or crab sticks</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Toss cucumber slices with salt, let sit for 10 minutes then
+                squeeze out excess water.
+              </li>
+              <li class="list-decimal">
+                Mix vinegar, sugar and soy sauce until sugar dissolves.
+              </li>
+              <li class="list-decimal">
+                Combine dressing with cucumbers and optional ingredients.
+              </li>
+              <li class="list-decimal">
+                Chill for 30 minutes, garnish with sesame seeds before serving.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Sunomono.webp"
+              alt="Sunomono"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Sunomono
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Sunomono
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Refreshing Japanese cucumber salad lightly pickled in sweet
+                vinegar dressing, often with seafood or seaweed.
+              </p>
+              <button
+                popovertarget="sunomono_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 2 -->
+
+        <!-- Card 3: Edamame -->
+        <div
+          popover
+          id="edamame_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Edamame
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">12 oz fresh or frozen edamame in pods</li>
+              <li class="list-disc">1 tbsp sea salt</li>
+              <li class="list-disc">Optional: 1/2 tsp chili flakes</li>
+              <li class="list-disc">Optional: 1 tsp sesame oil</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Bring 4 cups water to boil, add 2 tsp salt.
+              </li>
+              <li class="list-decimal">
+                Add edamame, boil for 3-5 minutes until bright green.
+              </li>
+              <li class="list-decimal">
+                Drain and toss with remaining salt and optional seasonings.
+              </li>
+              <li class="list-decimal">
+                Serve warm or chilled. Squeeze pods to pop beans out.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Edamame.jpg"
+              alt="Edamame"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Edamame
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Edamame
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Young soybeans in pods, lightly boiled and salted - a
+                protein-rich Japanese appetizer enjoyed by popping beans from
+                pods.
+              </p>
+              <button
+                popovertarget="edamame_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 3 -->
+
+        <!-- Card 4: Tamagoyaki -->
+        <div
+          popover
+          id="tamagoyaki_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Tamagoyaki
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients:
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">4 large eggs</li>
+              <li class="list-disc">1 tbsp sugar</li>
+              <li class="list-disc">1 tsp soy sauce</li>
+              <li class="list-disc">1 tsp mirin</li>
+              <li class="list-disc">1/4 tsp salt</li>
+              <li class="list-disc">1/2 tbsp vegetable oil</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Whisk eggs with sugar, soy sauce, mirin and salt until smooth.
+              </li>
+              <li class="list-decimal">
+                Heat oil in rectangular tamagoyaki pan over medium-low.
+              </li>
+              <li class="list-decimal">
+                Pour thin layer of egg, let set slightly then roll toward one
+                side.
+              </li>
+              <li class="list-decimal">
+                Repeat process, building layers until all egg is used.
+              </li>
+              <li class="list-decimal">
+                Slice into 1-inch pieces when slightly cooled.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Tamagoyaki.jpg"
+              alt="Tamagoyaki"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Tamagoyaki
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Tamagoyaki
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Japanese rolled omelette with sweet-savory flavor, made by
+                cooking thin egg layers in a rectangular pan.
+              </p>
+              <button
+                popovertarget="tamagoyaki_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 4 -->
+
+        <!-- Card 5: Gomaae -->
+        <div
+          popover
+          id="gomaae_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Gomaae
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients (Spinach Version):
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">1 bunch spinach (about 10oz)</li>
+              <li class="list-disc">3 tbsp toasted sesame seeds</li>
+              <li class="list-disc">1 1/2 tbsp sugar</li>
+              <li class="list-disc">1 1/2 tbsp soy sauce</li>
+              <li class="list-disc">1 tbsp mirin</li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Blanch spinach for 30 seconds, rinse in cold water and squeeze
+                dry.
+              </li>
+              <li class="list-decimal">
+                Grind sesame seeds in suribachi or mortar until slightly oily.
+              </li>
+              <li class="list-decimal">
+                Mix in sugar, soy sauce and mirin to make paste.
+              </li>
+              <li class="list-decimal">
+                Toss spinach with sesame mixture until well coated.
+              </li>
+              <li class="list-decimal">
+                Serve at room temperature or chilled.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Gomaae.webp"
+              alt="Gomaae"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Gomaae
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Gomaae
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Japanese sesame-dressed vegetables, most commonly spinach,
+                featuring a nutty-sweet sesame seed coating.
+              </p>
+              <button
+                popovertarget="gomaae_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 5 -->
+
+        <!-- Card 6: Tsukemono -->
+        <div
+          popover
+          id="tsukemono_recipe"
+          class="hide-scrollbar fixed top-1/2 left-1/2 z-50 m-0 h-105 w-85 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center rounded-md bg-white shadow-lg md:h-125 md:w-95 lg:h-149 lg:w-113"
+        >
+          <div class="bg-primary sticky top-0 border-b-1 border-gray-700 py-2">
+            <h2 class="text-secondary flex justify-center text-4xl font-bold">
+              Tsukemono
+            </h2>
+          </div>
+
+          <div class="px-5 py-4">
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">
+              Ingredients (Quick Cucumber Pickle):
+            </h2>
+            <ul class="mb-5 ml-4">
+              <li class="list-disc">2 Japanese cucumbers</li>
+              <li class="list-disc">1 tbsp salt</li>
+              <li class="list-disc">2 tbsp rice vinegar</li>
+              <li class="list-disc">1 tbsp sugar</li>
+              <li class="list-disc">1 tsp grated ginger</li>
+              <li class="list-disc">
+                Optional: 1 tsp sesame seeds or chili threads
+              </li>
+            </ul>
+
+            <h2 class="mb-3 text-xl font-semibold text-gray-800">Steps:</h2>
+            <ol class="ml-4">
+              <li class="list-decimal">
+                Cut cucumbers into 1/4-inch rounds or spears.
+              </li>
+              <li class="list-decimal">
+                Toss with salt and let sit for 15 minutes, then rinse.
+              </li>
+              <li class="list-decimal">
+                Mix vinegar, sugar and ginger until sugar dissolves.
+              </li>
+              <li class="list-decimal">
+                Combine with cucumbers and optional ingredients.
+              </li>
+              <li class="list-decimal">
+                Refrigerate for at least 1 hour before serving.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          class="group from-secondary hover:from-secondary hover:via-secondary hover:to-secondary h-80 w-72 flex-shrink-0 rounded-sm bg-gradient-to-b from-60% via-gray-700 via-80% to-black to-100% p-1 transition duration-300 ease-out hover:bg-gradient-to-b md:h-97 md:w-90 lg:h-115 lg:w-108"
+        >
+          <div class="relative h-full w-full">
+            <img
+              src="/assets/images/Tsukemono.jpg"
+              alt="Tsukemono"
+              class="h-full w-full rounded-sm object-cover"
+            />
+            <h3
+              class="text-secondary absolute bottom-5 left-1/2 -translate-x-1/2 transform text-4xl font-bold opacity-100 transition-all duration-300 ease-out group-hover:opacity-0"
+            >
+              Tsukemono
+            </h3>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
+            >
+              <div
+                class="absolute inset-0 z-1 bg-gradient-to-b from-gray-700 via-gray-800 to-black opacity-0 transition-all duration-300 ease-out group-hover:opacity-50"
+              ></div>
+              <h3
+                class="text-secondary z-10 translate-y-5 transform text-4xl font-bold transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Tsukemono
+              </h3>
+              <p
+                class="z-10 mt-2 translate-y-5 transform text-center font-medium text-white transition-all duration-300 ease-out group-hover:translate-y-0"
+              >
+                Japanese pickled vegetables that accompany meals, ranging from
+                lightly salted to fermented varieties.
+              </p>
+              <button
+                popovertarget="tsukemono_recipe"
+                class="border-secondary text-secondary hover:bg-secondary z-10 mt-4 translate-y-5 transform rounded-md border-2 p-1 text-lg font-medium transition-all duration-300 ease-out group-hover:translate-y-0 hover:text-white"
+              >
+                Show Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 6 -->
+      </div>
+    </section>
+
+    <!--End of Foods Section-->
+
+    <!--Testimonials-->
+    <section class="m-4">
+      <h2 class="text-center text-4xl font-bold">Fresh From Our Community</h2>
+
+      <div class="hide-scrollbar flex gap-4 overflow-x-auto py-4">
+        <!-- Testimonial 1 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">John Doe</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "NekoDesu has transformed my cooking! The recipes are easy to
+              follow and the flavors are incredible. Highly recommend!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Jane Smith</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "I love how NekoDesu brings authentic Japanese flavors to my
+              kitchen. My family can't get enough!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Michael Tanaka</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "The ramen recipe is my favorite! It's so easy to make and tastes
+              just like the ones I had in Japan."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Emily Wong</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "Thanks to NekoDesu, I've learned so much about Japanese cuisine.
+              The step-by-step guides are amazing!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Chris Lee</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "The sushi recipes are a game-changer! I never thought I could
+              make sushi at home, but NekoDesu made it possible."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Sophia Kim</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "The udon recipe is a hit in my household! It's hearty, flavorful,
+              and so easy to prepare."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 7 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Liam Johnson</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "NekoDesu's miso soup recipe is my go-to comfort food. It's simple
+              yet so satisfying!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 8 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Olivia Chen</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "I never thought I could make tempura at home, but NekoDesu's
+              recipe made it so easy and delicious!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 9 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Ethan Brown</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "The teriyaki chicken recipe is a game-changer. It's now a staple
+              in my weekly meal plan!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 10 -->
+        <div
+          class="font-dmsans flex w-80 flex-shrink-0 flex-col gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <img class="size-12" src="/assets/icons/user.png" alt="User" />
+            <h3 class="font-bold">Isabella Garcia</h3>
+            <i
+              class="fa-regular fa-heart fa-lg ml-auto cursor-pointer"
+              onclick="toggleHeart(this)"
+            ></i>
+          </div>
+          <div class="flex">
+            <p>
+              "NekoDesu's sushi roll guide is fantastic! I can now make sushi
+              for my friends and family with confidence."
+            </p>
           </div>
         </div>
       </div>
-
-      <h2 class="text-4xl font-bold">Main Dishes</h2>
-      <div></div>
-      <h2 class="text-4xl font-bold">Side Dishes</h2>
-      <div></div>
-      <h2 class="text-4xl font-bold">Drinks</h2>
-      <div></div>
     </section>
+    <!--End of Testimonials-->
+
+    <footer id="footer-section" class="bg-primary font-dmsans py-5 text-white">
+      <div
+        class="flex flex-col items-center justify-center gap-10 text-center align-middle md:flex-row md:items-start md:justify-around md:px-20 md:align-top lg:flex-row lg:items-start lg:justify-around lg:px-20 lg:align-top"
+      >
+        <div
+          class="flex flex-col flex-nowrap items-center justify-center gap-4 text-center md:w-1/3 lg:w-1/3"
+        >
+          <div class="flex justify-center">
+            <img
+              class="size-20"
+              src="/assets/icons/NekoDesu.png"
+              alt="NekoDesu Logo"
+            />
+          </div>
+          <h2 class="text-lg font-bold" style="font-family: Yatra One">
+            <span class="text-secondary">NekoDesu</span> - Your Gateway to
+            Authentic Japanese Cuisine
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col items-center gap-4 text-start md:w-1/3 lg:w-1/3"
+        >
+          <div>
+            <h3 class="text-2xl font-bold">Company</h3>
+          </div>
+          <ul class="flex flex-col gap-5">
+            <li>About Us</li>
+            <li>Blog</li>
+            <li>Work with Us</li>
+            <li>Testimonials</li>
+          </ul>
+          <div class="flex flex-col items-center gap-2">
+            <textarea
+              class="border-b-accent w-80 rounded-sm border-b p-2 text-left align-top text-white shadow-lg lg:w-100"
+              placeholder="Message Us here..."
+            ></textarea>
+            <div>
+              <input
+                type="text"
+                class="border-b-accent w-60 rounded-sm border bg-white p-2 text-left text-black shadow-lg lg:w-80"
+                placeholder="Enter Email"
+              />
+              <button
+                class="text-secondary button hover:bg-secondary border-secondary rounded-sm border-2 p-2 font-medium transition-all duration-300 ease-out hover:text-white"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mb-4 flex flex-col items-center gap-4 text-start md:w-1/3 lg:w-1/3"
+        >
+          <h3 class="text-2xl font-bold">Socials</h3>
+          <ul class="flex items-center gap-4">
+            <li>
+              <i
+                class="icon-color-yellow fa-brands fa-square-instagram fa-2xl"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="icon-color-yellow fa-brands fa-square-facebook fa-2xl"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="icon-color-yellow fa-brands fa-square-x-twitter fa-2xl"
+              ></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-5">
+        <h2 class="whitespace-nowrap">© 2025 NekoDesu.</h2>
+        <div class="h-5 w-px bg-white"></div>
+        <h2 class="text-secondary whitespace-nowrap">Privacy Policy</h2>
+        <div class="h-5 w-px bg-white"></div>
+        <h2 class="whitespace-nowrap">
+          Site By <span class="text-secondary">Flare</span>
+        </h2>
+      </div>
+    </footer>
 
     <script src="/app/index.js"></script>
   </body>
